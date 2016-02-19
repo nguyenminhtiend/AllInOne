@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h1 class="page-header">Dashboard</h1>
+
+<input id="demo_vertical2" class="touchspin-input" type="text" value="" name="demo_vertical2" width="50">
+
+<div class="input-group bootstrap-touchspin">
+    <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
+    <input id="demo_vertical2" type="text" value="" name="demo_vertical2" width="50" class="form-control" style="display: block;">
+    <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span><span class="input-group-btn-vertical">
+                                                                                                  <button class="btn btn-default bootstrap-touchspin-up" type="button"><i class="glyphicon glyphicon-plus"></i></button><button class="btn btn-default bootstrap-touchspin-down" type="button"><i class="glyphicon glyphicon-minus"></i></button>
+                                                                                              </span>
+</div>
+
+@section scripts
+{
+    <script src="~/Scripts/jquery.bootstrap-touchspin.min.js"></script>
+    <script>
+        $("input[name='demo_vertical2']").TouchSpin({
+            verticalbuttons: true,
+            verticalupclass: 'glyphicon glyphicon-plus',
+            verticaldownclass: 'glyphicon glyphicon-minus'
+        });
+    </script>
+}
+

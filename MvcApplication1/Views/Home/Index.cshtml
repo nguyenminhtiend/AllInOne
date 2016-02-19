@@ -1,0 +1,55 @@
+﻿@using MvcApplication1.Models
+@model MvcApplication1.Models.Project
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<a href="javascript:show()">Click me</a>
+
+@Html.EnumDropDownListFor(x=>x.Status)
+
+<table id="myDataTable" class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Customer</th>
+        </tr>
+    </thead>
+    <tbody> 
+    </tbody>
+</table>
+
+<i class="glyphicon glyphicon-plus-sign" style="margin-left: 100px;color: #0088cc;"></i>
+<i class="glyphicon glyphicon-arrow-down" style="margin-left: 100px;color: #0088cc;"></i>
+<i class="glyphicon glyphicon-plus-sign" style="margin-left: 100px;color: #005580;"></i>
+<i class="glyphicon glyphicon-arrow-down" style="margin-left: 100px;color: #005580;"></i>
+
+
+@section scripts
+{
+    <script src="~/Scripts/toastr.js"></script>
+    <script src="~/Scripts/DataTables-1.10.4/jquery.dataTables.js"></script>
+
+    <script type="text/javascript">
+        unit();
+
+        function unit() {
+            $("#Status").change(function () {
+                alert($(this).val());
+            });
+        }
+
+        function show() {
+            toastr.success('Added');
+            toastr.info('Info');
+            toastr.error('Erro');
+        }
+    </script> 
+}
+<link href="~/Content/toastr.min.css" rel="stylesheet" />
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />

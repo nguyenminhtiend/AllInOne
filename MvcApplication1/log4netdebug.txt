@@ -1,0 +1,6 @@
+log4net:ERROR Could not create Appender [DatabaseLog] of type [CtPlc.Pandi.SafetyAndLoss.Web.Log4NetAppenders.AdvanceAdoAppender]. Reported error follows.
+System.TypeLoadException: Could not load type [CtPlc.Pandi.SafetyAndLoss.Web.Log4NetAppenders.AdvanceAdoAppender]. Tried assembly [log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a] and all loaded assemblies
+   at log4net.Util.SystemInfo.GetTypeFromString(Assembly relativeAssembly, String typeName, Boolean throwOnError, Boolean ignoreCase)
+   at log4net.Util.SystemInfo.GetTypeFromString(String typeName, Boolean throwOnError, Boolean ignoreCase)
+   at log4net.Repository.Hierarchy.XmlHierarchyConfigurator.ParseAppender(XmlElement appenderElement)
+log4net:ERROR Appender named [DatabaseLog] not found.

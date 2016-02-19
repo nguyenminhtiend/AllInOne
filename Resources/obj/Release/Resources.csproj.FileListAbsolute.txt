@@ -1,0 +1,10 @@
+D:\Working\Self Study\AllInOne\Resources\bin\Release\Resources.dll
+D:\Working\Self Study\AllInOne\Resources\bin\Release\Resources.pdb
+D:\Working\Self Study\AllInOne\Resources\obj\Release\Resources.csprojResolveAssemblyReference.cache
+D:\Working\Self Study\AllInOne\Resources\obj\Release\Resources.csproj.GenerateResource.Cache
+D:\Working\Self Study\AllInOne\Resources\obj\Release\Resources.dll
+D:\Working\Self Study\AllInOne\Resources\obj\Release\Resources.pdb
+D:\Working\Self Study\AllInOne\Resources\obj\Release\Resources.Resources.resources
+D:\Working\Self Study\AllInOne\Resources\bin\Release\vi\Resources.resources.dll
+D:\Working\Self Study\AllInOne\Resources\obj\Release\Resources.Resources.vi.resources
+D:\Working\Self Study\AllInOne\Resources\obj\Release\vi\Resources.resources.dll

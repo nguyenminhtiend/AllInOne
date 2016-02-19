@@ -1,0 +1,83 @@
+﻿@model Internationalization.Models.Person
+
+@{
+    ViewBag.Title = "Index";
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+}
+
+@helper selected(string c, string culture)
+{
+    if (c == culture)
+    {
+        @:checked="checked"
+    }
+}
+@using (Html.BeginForm("SetCulture", "Person"))
+{
+    <fieldset>
+        <legend>@Resources.Resources.Title</legend>
+        <div class="control-group">
+            <div class="controls">
+                <label for="en">
+                    <input name="culture" id="en" value="en" type="radio" @selected("en", culture) /> English
+                </label>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <label for="vi">
+                    <input name="culture" id="vi" value="vi" type="radio" @selected("vi", culture) /> Tiếng Việt
+                </label>
+            </div>
+        </div>
+
+    </fieldset>
+}
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FirstName)
+                @Html.ValidationMessageFor(model => model.FirstName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LastName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LastName)
+                @Html.ValidationMessageFor(model => model.LastName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+    (function ($) {
+        $("input[type = 'radio']").click(function () {
+            $(this).parents("form").submit(); // post form
+        });
+
+    })(jQuery);
+</script>
+}

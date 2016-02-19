@@ -1,0 +1,123 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<div ng-app="appModule">
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div ng-controller="projectController">
+
+
+        <span class="page-list" id="projectShowSize">
+            <span class="btn-group dropdown">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="page-size">10</span> <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li class="active disabled"><a href="javascript:void(0)" data-size="10">10</a></li>
+                    <li><a href="javascript:void(0)" data-size="25">25</a></li>
+                    <li><a href="javascript:void(0)" data-size="50">50</a></li>
+                    <li><a href="javascript:void(0)" data-size="100">100</a></li>
+                </ul>
+            </span>records per page
+        </span>
+        <br />
+
+        <table class="table">
+            <tr>
+                <th>Name
+                </th>
+                <th>Number
+                </th>
+                <th>Customer
+                </th>
+                <th>Status
+                </th>
+                <th>StartDate
+                </th>
+                <th>EndDate
+                </th>
+                <th></th>
+            </tr>
+
+            <tbody>
+                <tr ng-repeat="project in projects">
+                    <td>{{project.Name}}</td>
+                    <td>{{project.Number}}</td>
+                    <td>{{project.Customer}}</td>
+                    <td>{{project.Status}}</td>
+                    <td>{{project.StartDate}}</td>
+                    <td>{{project.EndDate}}</td>
+                    <td>
+                        <input type="button" id="Edit" value="Edit" data-ng-click="get(stud)" />
+                        <input type="button" id="Delete" value="Delete" data-ng-click="delete(stud)" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        @*<paging
+            class="small"
+            page="currentPage"
+            page-size="pageSize"
+            total="total"
+            adjacent="{{adjacent}}"
+            dots="{{dots}}"
+            scroll-top="{{scrollTop}}"
+            hide-if-empty="{{hideIfEmpty}}"
+            ul-class="{{ulClass}}"
+            active-class="{{activeClass}}"
+            disabled-class="{{disabledClass}}"
+            show-prev-next="{{showPrevNext}}"
+            paging-action="DoCtrlPagingAct('Paging Clicked', page)">
+				</paging>*@
+
+    <custom-messi user="jakob"></custom-messi>
+        <ul class="pagination text-center" ng-show="pageCount > 1">
+            <li ng-click="firstPage()" ng-class="isFirstPage() && 'disabled'">
+                <a>
+                    <i class="glyphicon glyphicon-fast-backward" ng-class="isFirstPage() && 'icon-white'"></i>
+                </a>
+            </li>
+            <li ng-click="perviousPage()" ng-class="isFirstPage() && 'disabled'">
+                <a>
+                    <i class="glyphicon glyphicon-step-backward" ng-class="isFirstPage() && 'icon-white'"></i>
+                </a>
+            </li>
+            <li ng-click="setPage($index)" ng-repeat="i in pageCountArray() track by $index" ng-class="page=={{$index}} && 'active'">
+                <a href="#">{{$index+1}}</a>
+            </li>
+            <li ng-click="nextPage()" ng-class="isLastPage() && 'disabled'">
+                <a>
+                    <i class="glyphicon glyphicon-step-forward" ng-class="isLastPage() && 'icon-white'"></i>
+                </a>
+            </li>
+            <li ng-click="lastPage()" ng-class="isLastPage() && 'disabled'">
+                <a>
+                    <i class="glyphicon glyphicon-fast-forward" ng-class="isLastPage() && 'icon-white'"></i>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</div>
+@section Scripts {
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/angular-route.js"></script>
+<script src="~/Scripts/app/app.js"></script>
+<script src="~/Scripts/app/service/projectService.js"></script>
+<script src="~/Scripts/app/directive/customMessi.js"></script>
+<script src="~/Scripts/app/directive/paging.js"></script>
+<script src="~/Scripts/app/controller/projectController.js"></script>
+<script src="~/Scripts/View/searchProject.js"></script>
+
+<script>
+    $(document).ready(function () {
+        //ProjectSearch.init();
+
+    });
+</script>
+}

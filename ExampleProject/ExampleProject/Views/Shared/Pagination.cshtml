@@ -1,0 +1,45 @@
+﻿@model ExampleProject.Models.Paging
+           
+<ul class="pagination" id="pagingSearchProject" style="margin-top: 10px;">
+    @if (Model.IsFirst)
+    {
+        <li data-page="@Model.PreviousPage">
+            <a href="javascript:void(0)">&larr; Prev</a>
+        </li>
+    }
+    else
+    {
+        <li class="disabled" data-page="@Model.PreviousPage">
+            <a href="javascript:void(0)"  >&larr; Prev</a>
+        </li>
+    }
+
+    @for (int i = 0; i < Model.Total; i++)
+    {
+        var j = i + 1;
+        if (i == Model.CurrentPage)
+        {
+            <li class="active">
+                <a href="javascript:void(0)">@j</a>
+            </li>
+        }
+        else
+        {
+            <li data-page="@i">
+                <a href="javascript:void(0)">@j</a>
+            </li>
+        }
+    }
+    @if (Model.IsLast)
+    {
+        <li data-page="@Model.NextPage">
+            <a href="javascript:void(0)">Next &rarr;</a>
+        </li>
+    }
+    else
+    {
+        <li class="disabled" data-page="@Model.NextPage">
+            <a href="javascript:void(0)">Next &rarr;</a>
+        </li>  
+    }
+</ul>

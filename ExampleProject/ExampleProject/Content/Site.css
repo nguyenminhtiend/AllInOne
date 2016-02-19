@@ -1,0 +1,22 @@
+﻿
+* {
+  -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
+}
+@media (min-width: 940px) { .container { max-width: 940px; } }
+.input-validation-error {
+    border: 1px solid darkred;
+}
+.page-list {
+display: inline-block;
+}
+.fixed-table-pagination .btn-group {
+position: relative;
+display: inline-block;
+vertical-align: middle;
+}
+table tr th {
+    cursor: pointer;
+    background-color: grey;
+}
